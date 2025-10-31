@@ -4,11 +4,11 @@ on:
     workflow_dispatch:
     push:
         branches:
-            - --main
+            - main
 
 env:
     AZURE_WEBAPP_NAME: azure-demo-api
-    AZURE_WEBAPP_PACKAGE_PATH: "/AzureDemo.Api/publish"
+    AZURE_WEBAPP_PACKAGE_PATH: "./publish"
     DOTNET_VERSION: "9.x"
     SOLUTION_PATH: "AzureDemoApi.sln"
     API_PROJECT_PATH: "AzureDemo.Api"
@@ -52,13 +52,13 @@ jobs:
 
         steps:
             - name: Download artifacts from build job
-              uses: actions/download-artifacts@v4
+              uses: actions/download-artifact@v4
               with:
                   name: webapp
                   path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
 
             - name: Deploy
-              uses: azure/webapps-depoly@v2
+              uses: azure/webapps-deploy@v2
               with:
                   app-name: ${{ env.AZURE_WEBAPP_NAME }}
                   publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
