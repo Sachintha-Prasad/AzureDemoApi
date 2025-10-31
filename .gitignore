@@ -1,0 +1,105 @@
+# Visual Studio / .NET
+.vs/
+.vscode/
+bin/
+obj/
+out/
+artifacts/
+
+# User-specific files
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+*.DotSettings.user
+
+# Build products
+*.exe
+*.dll
+*.pdb
+*.cache
+*.ilk
+*.log
+
+# NuGet
+*.nupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+.nuget/
+
+# Rider / JetBrains
+.idea/
+*.sln.iml
+
+# Test output
+TestResults/
+coverage/
+*.coverage
+*.coveragexml
+*.trx
+
+# Publish / deployment
+publish/
+*.Publish.xml
+*.azurePubxml
+*.azurePubxml.user
+*.war
+*.zip
+
+# Azure
+local.settings.json
+.azure/
+*.publishsettings
+# App Service publishing artifacts
+*.scm*
+
+# ASP.NET / ASP.NET Core
+appsettings*.Development.json
+appsettings*.Local.json
+secrets.json
+secrets.*
+.env
+.env.* 
+
+# IIS / IIS Express
+IISExpress/
+applicationhost.config
+
+# Entity Framework / DB
+*.mdf
+*.ldf
+
+# Docker
+docker-compose.override.yml
+**/docker-compose.override.yml
+docker-compose.*.local.yml
+
+# Node/npm (if frontend present)
+node_modules/
+npm-debug.log
+yarn-error.log
+pnpm-lock.yaml
+
+# Editor & OS
+*.swp
+*~
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Certificates & keys
+*.pfx
+*.key
+*.cer
+
+# IntelliSense / caches
+ipch/
+*.sdf
+*.VC.db
+_ReSharper*/
+.idea/
+
+# Misc
+.vagrant/
+.vagrant.d/

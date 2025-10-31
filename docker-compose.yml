@@ -1,0 +1,16 @@
+﻿version: '3.8'
+
+services:
+  azuredemoapi:
+    container_name: AzureDemo.Api
+    build:
+        context: ./AzureDemo.Api
+        dockerfile: Dockerfile
+    image: azuredempapi:dev
+    ports:
+        - "8080:8080"
+        - "8081:8081" 
+    environment:
+        - ASPNETCORE_ENVIRONMENT=development
+        - DOTNET_USE_POLLING_FILE_WATCHER=1
+    restart: unless-stopped
