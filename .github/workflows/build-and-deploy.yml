@@ -11,7 +11,7 @@ env:
     DOTNET_VERSION: "9.x"
     SOLUTION_PATH: "AzureDemoApi.sln"
     API_PROJECT_PATH: "AzureDemo.Api"
-    PUBLISH_DIR: "./AzureDemo.Api/publish"
+    PUBLISH_DIR: "./publish"
 
 jobs:
     build-and-test:
@@ -36,7 +36,7 @@ jobs:
               run: dotnet test ${{ env.SOLUTION_PATH }} --configuration Release --no-restore --no-build --verbosity normal
 
             - name: Publish
-              run: dotnet publish ${{ env.API_PROJECT_PATH }} --configuration Release --no-restore --no-build --property:PublishDir=${{ env.PUBLISH_DIR }}
+              run: dotnet publish ${{ env.API_PROJECT_PATH }} --configuration Release --no-restore --no-build --property:PublishDir=${{ github.workspace }}/publish
 
             - name: Check published files
               run: ls -R ${{ env.PUBLISH_DIR }}
